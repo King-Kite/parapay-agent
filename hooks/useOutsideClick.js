@@ -24,7 +24,6 @@ const useOutsideClick = (initValue) => {
 	}, []);
 
 	return {
-		handleMouseClick,
 		ref,
 		setVisible,
 		visible,
