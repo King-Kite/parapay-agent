@@ -1,4 +1,6 @@
 import React from "react";
+import Input from "../common/Input";
+import Select from "../common/Select";
 
 const formContainerStyle = `
 	bottom-10 rounded-lg w-full max-w-sm mx-auto px-2 relative
@@ -9,65 +11,85 @@ const formStyle = `
 	mb-4 px-4 py-12
 `;
 
-const inputStyle = `
-	appearance-none border-2 border-gray-200 rounded-sm w-full p-4 
-	placeholder-gray-600 text-gray-700 leading-tight text-xl
-	focus:border-gray-400 focus:outline-none focus:shadow-outline shadow 
-`;
-
-const selectStyle = `
-	appearance-none bg-white border border-gray-200 
-	hover:border-gray-400 hover:shadow-outline
-	focus:border-gray-400 focus:outline-none focus:shadow-outline 
-	rounded shadow leading-tight p-4 w-full text-xl text-gray-700
-`;
-
-const selectIconStyle = `
-	pointer-events-none absolute inset-y-0 right-0 
-	flex items-center px-2 mx-1 text-gray-600
-`;
-
-const selectOptionStyle = `
-	focus:bg-gray-100 focus:text-gray-700 
-	hover:text-gray-700 hover:bg-gray-100 
-	text-gray-600 text-lg tracking-wide my-2 p-2
-`;
+const loadingStyle = `
+	animate-spin duration-500 w-12 h-12 
+	border-4 border-t-0 border-b-0 border-dashed border-green-500 
+	bg-gray-100 rounded-full
+`
 
 const buttonStyle = `
 	bg-purple-900 cursor-pointer py-3 rounded-md
 	text-2xl text-gray-100 text-center w-full mb-2
 `;
 
-const ChatForm = () => (
+const options = [
+	{ id: 1, title: "Agent Support (Online)" },
+	{ id: 2, title: "User Support (Online)" },
+];
+
+const ChatForm = ({
+	errors,
+	form: { department, email, name, phone, question },
+	loading,
+	handleChange,
+	handleSelect,
+	handleSubmit,
+}) => (
 	<section className={formContainerStyle}>
-		<form className={formStyle}>
+		<form onSubmit={handleSubmit} className={formStyle}>
 			<div className="mb-6">
-				<input className={inputStyle} placeholder="Name" />
+				<Input
+					error={errors?.name}
+					name="name"
+					onChange={handleChange}
+					placeholder="Name"
+					type="text"
+					value={name || ""}
+				/>
 			</div>
 			<div className="mb-6">
-				<input className={inputStyle} placeholder="Phone" />
-				<p className="text-red-500 text-sm italic my-2">
-					Please choose a password
-				</p>
+				<Input
+					error={errors?.password}
+					name="phone"
+					onChange={handleChange}
+					placeholder="Phone"
+					type="text"
+					value={phone || ""}
+				/>
 			</div>
 			<div className="mb-6">
-				<input className={inputStyle} placeholder="Email" />
+				<Input
+					error={errors?.email}
+					name="email"
+					onChange={handleChange}
+					placeholder="Email"
+					type="email"
+					value={email || ""}
+				/>
 			</div>
-			<div className="mb-6 relative bg-green-400">
-				<div className="relative">
-					<div className={selectStyle}>Department</div>
-					<div className={selectIconStyle}>
-						<i className="fas fa-chevron-down" />
-					</div>
+			<div className="mb-6">
+				<Select
+					error={errors?.department}
+					label="Department"
+					handleSelect={handleSelect}
+					options={options}
+					value={department}
+				/>
+			</div>
+			<div className="mb-6">
+				<Input
+					name="question"
+					onChange={handleChange}
+					placeholder="Question"
+					type="textarea"
+					value={question || ""}
+				/>
+			</div>
+			{loading && (
+				<div className="flex justify-center items-center mb-4">
+					<div className={loadingStyle} />
 				</div>
-				<div className="absolute top-12 w-full bg-white m-1 mt-3 shadow-lg">
-					<p className={selectOptionStyle}>Agent Support (Online)</p>
-					<p className={selectOptionStyle}>User Support (Online)</p>
-				</div>
-			</div>
-			<div className="mb-6">
-				<textarea className={inputStyle} placeholder="Question" />
-			</div>
+			)}
 			<div className="mb-1 rounded-md">
 				<button className={buttonStyle}>
 					<i className="fas fa-paper-plane mr-2" />
