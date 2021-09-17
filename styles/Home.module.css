@@ -1,0 +1,8 @@
+.wrapper {
+  mask-image: 
+    linear-gradient(
+      to right, 
+      rgba(137,255,255, 0.6), 
+      rgba(102, 153, 153, 0.9)
+    );
+}
