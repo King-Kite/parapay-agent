@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import ChatSection from "./ChatSection";
 import DownloadParapay from "./DownloadParapay";
 import Faq from "./Faq";
 import Hero from "./Hero";
@@ -21,7 +20,6 @@ const Home = ({ title }) => (
 		<DownloadParapay />
 		<ReadyStarted />
 		<Faq />
-		{/*<ChatSection />*/}
 	</>
 )
 

@@ -21,10 +21,11 @@ const HeroContent = () => (
 		<div className="md:flex md:w-full md:px-5 lg:px-4">
 			<a href="#" className={downloadStyle}>
 				<div>
-					<img
+					<Image
+						height={40}
+						width={40}
 						src="/assets/images/flat-ui_google.svg"
 						alt="playstore"
-						style={{ width: "40", height: "40"}}
 					/>
 				</div>
 				<div className="flex flex-col ml-3">

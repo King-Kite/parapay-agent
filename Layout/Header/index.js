@@ -5,7 +5,7 @@ const Header = () => {
 	const [visible, setVisible] = useState(false);
 
 	return (
-		<header className="container mx-auto relative z-50">
+		<header className="md:container mx-auto relative z-50">
 			<nav className="bg-white flex justify-between items-center px-8 sm:px-2 py-2 md:py-0 lg:px-6">
 				<div className="md:w-1/4">
 					<Image width={158} height={39} src="/assets/images/logo_primary.png" alt="header-logo" />

@@ -6,7 +6,6 @@ const useOutsideClick = (initValue) => {
 	const eventType = "click";
 
 	const handleMouseClick = useCallback(({ target }) => {
-		console.log("GOT CALLED!")
 		!ref?.current?.contains(target) && setVisible(false);
 	}, []);
 
