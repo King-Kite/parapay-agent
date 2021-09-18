@@ -15,10 +15,10 @@ const Header = () => {
 						className={`
 							${!visible && "hidden"} absolute bg-gray-100 md:bg-white md:flex md:relative md:justify-center lg:justify-end lg:pr-24 md:h-auto h-screen mt-16 md:mt-0 top-0 left-0 w-full
 						`}>
-						<ul className="font-semibold text-xl mt-12 md:flex md:justify-center md:items-center md:mt-0 p-4 md:p-1">
-							<li className="m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">Home</a></li>
-							<li className="m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">Services</a></li>
-							<li className="m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">FAQ</a></li>
+						<ul className="text-xl mt-12 md:flex md:justify-center md:items-center md:mt-0 p-4 md:p-1">
+							<li className="hover:font-semibold m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">Home</a></li>
+							<li className="hover:font-semibold m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">Services</a></li>
+							<li className="hover:font-semibold m-5 lg:mx-8 hover:font-bold text-blue-900"><a href="#">FAQ</a></li>
 						</ul>
 					</div>
 					<div 
