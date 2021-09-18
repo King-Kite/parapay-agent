@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:style": "tailwind build styles/css/vendors.css -o styles/css/tailwind.css",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

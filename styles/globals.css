@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 @import url("./css/all.min.css");
+@import url("./css/tailwind.css");
 
 html,
 body {
