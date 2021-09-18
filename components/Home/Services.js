@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import FadeInSection from "../common/FadeInSection";
 
 const content = [
 	{
@@ -46,20 +47,23 @@ const sectionContentStyle = "text-left text-lg text-gray-400 w-3/4 lg:w-full";
 const sectionStyle =
 	"bg-purple-800 flex flex-col justify-center md:justify-start items-center md:items-start rounded mx-4 sm:mx-8 md:mx-4 my-2 px-4 py-6";
 
+
 const Services = () => (
 	<section className={containerStyle}>
 		<h1 className={brandStyle}>Services you can do as a ParaPay Agent?</h1>
 		<div className={sectionContainerStyle}>
 			{content?.map(({ content, image, title }) => (
-				<section key={title} className={sectionStyle}>
-					<div className="mt-1 mb-4 md:ml-8">
-						<Image height={50} width={50} src={image} alt={title} />
-					</div>
-					<div className={sectionContentContainerStyle}>
-						<h5 className={sectionBrandStyle}>{title}</h5>
-						<p className={sectionContentStyle}>{content}</p>
-					</div>
-				</section>
+				<FadeInSection key={title}>
+					<section className={sectionStyle}>
+						<div className="mt-1 mb-4 md:ml-8">
+							<Image height={50} width={50} src={image} alt={title} />
+						</div>
+						<div className={sectionContentContainerStyle}>
+							<h5 className={sectionBrandStyle}>{title}</h5>
+							<p className={sectionContentStyle}>{content}</p>
+						</div>
+					</section>
+				</FadeInSection>
 			))}
 		</div>
 	</section>

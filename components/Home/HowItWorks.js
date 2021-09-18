@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import FadeInSection from "../common/FadeInSection";
 
 const content = [
 	{
@@ -35,15 +36,17 @@ const HowItWorks = () => (
 		<h2 className={brandStyle}>How it works</h2>
 		<div className={sectionContainerStyle}>
 			{content?.map(({ content, image, title }) => (
-				<section key={title} className={sectionStyle}>
-					<div>
-						<Image height={230} width={230} src={image} alt={title} />
-					</div>
-					<div>
-						<h5 className={sectionBrandStyle}>{title}</h5>
-						<p className={sectionContentStyle}>{content}</p>
-					</div>
-				</section>
+				<FadeInSection key={title}>
+					<section className={sectionStyle}>
+						<div>
+							<Image height={230} width={230} src={image} alt={title} />
+						</div>
+						<div>
+							<h5 className={sectionBrandStyle}>{title}</h5>
+							<p className={sectionContentStyle}>{content}</p>
+						</div>
+					</section>
+				</FadeInSection>
 			))}
 		</div>
 	</section>

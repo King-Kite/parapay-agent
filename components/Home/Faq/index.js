@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionAnswer from "./QuestionAnswer";
+import FadeInSection from "../../common/FadeInSection";
 
 const content = [
   { 
@@ -168,19 +169,21 @@ const Faq = () => (
 		<h1 className={brandStyle}>
 			Frequently Asked Questions
 		</h1>
-		<div className="container mx-auto my-8">
-			{content?.map((item, index) => (
-				<QuestionAnswer
-					answer={item.answer}
-					answer2={item.answer2}
-					key={index}
-					index={index}
-					initValue={index === 0 ? true : false}
-					last={content?.length - 1 === index ? true : false}
-					question={item.question}
-				/>
-			))}
-		</div>
+    <FadeInSection>
+  		<div className="container mx-auto my-8">
+  			{content?.map((item, index) => (
+  				<QuestionAnswer
+  					answer={item.answer}
+  					answer2={item.answer2}
+  					key={index}
+  					index={index}
+  					initValue={index === 0 ? true : false}
+  					last={content?.length - 1 === index ? true : false}
+  					question={item.question}
+  				/>
+  			))}
+  		</div>
+    </FadeInSection>
 	</section>
 );
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import FadeInSection from "../common/FadeInSection";
 
 const content = [
 	{
@@ -37,15 +38,17 @@ const ParaAgent = () => (
 		<h1 className={brandStyle}>Why Become A ParaPay Agent?</h1>
 		<div className={contentContainerStyle}>
 			{content?.map(({ content, image, title }) => (
-				<section key={title} className={sectionStyle}>
-					<div className="mt-1 mb-4 md:ml-8">
-						<Image height={50} width={50} src={image} alt={title} />
-					</div>
-					<div className={sectionContentContainerStyle}>
-						<h5 className={sectionBrandStyle}>{title}</h5>
-						<p className={sectionContentStyle}>{content}</p>
-					</div>
-				</section>
+				<FadeInSection key={title}>
+					<section className={sectionStyle}>
+						<div className="mt-1 mb-4 md:ml-8">
+							<Image height={50} width={50} src={image} alt={title} />
+						</div>
+						<div className={sectionContentContainerStyle}>
+							<h5 className={sectionBrandStyle}>{title}</h5>
+							<p className={sectionContentStyle}>{content}</p>
+						</div>
+					</section>
+				</FadeInSection>
 			))}
 		</div>
 	</section>
