@@ -161,7 +161,7 @@ const content = [
 ]
 
 const brandStyle = "font-bold mt-5 md:mt-8 text-4xl text-center text-blue-900"; 
-const containerStyle = "bg-gray-200 p-2 md:px-8 lg:px-12 py-4";
+const containerStyle = "bg-gray-200 p-2 md:px-8 lg:px-12 py-4 relative z-20";
 
 const Faq = () => (
 	<section className={containerStyle}>
