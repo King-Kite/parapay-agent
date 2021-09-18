@@ -23,7 +23,7 @@ const mainStyle = `
 const ChatLayout = ({ children, handleClick }) => (
 	<section className={containerStyle}>
 		<header className={headerStyle}>
-			<div className="border-0" onClick={handleClick}>
+			<div className="cursor-pointer border-0" onClick={handleClick}>
 				<i className="fas fa-times" />{" "}
 			</div>
 		</header>

@@ -19,6 +19,7 @@ const loadingStyle = `
 
 const buttonStyle = `
 	bg-purple-900 cursor-pointer py-3 rounded-md
+	hover:text-purple-900 hover:bg-purple-300
 	text-2xl text-gray-100 text-center w-full mb-2
 `;
 
@@ -91,7 +92,7 @@ const ChatForm = ({
 				</div>
 			)}
 			<div className="mb-1 rounded-md">
-				<button className={buttonStyle}>
+				<button className={buttonStyle + ` ${loading && "cursor-not-allowed disabled"}`}>
 					<i className="fas fa-paper-plane mr-2" />
 					<span>Start Chat</span>
 				</button>

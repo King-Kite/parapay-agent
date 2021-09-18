@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChatForm from "./ChatForm";
-import ChatLayout from "./ChatLayout";
+import style from "../../styles/Chat.module.css";
 
 const sectionStyle = `
 	container mx-auto
@@ -15,7 +15,7 @@ const sectionBrandContainerStyle = `
 `;
 
 const formErrorContainerStyle = `
-	container fixed bottom-12 mx-auto
+	container flex justify-center fixed bottom-12 mx-auto
 `;
 
 const formErrorStyle = `
@@ -47,6 +47,8 @@ const ChatContainer = ({ setVisible }) => {
 		event.preventDefault();
 
 		setLoading(true);
+		setConnectError(false);
+
 		setTimeout(() => {
 			setForm({});
 			setConnectError(true);
@@ -85,8 +87,7 @@ const ChatContainer = ({ setVisible }) => {
 
 			{connectError && (
 				<section
-					className={formErrorContainerStyle}
-					style={{ padding: "0 15.5px" }}
+					className={formErrorContainerStyle + " " + styles.reconnectError}
 				>
 					<div className={"flex " + formErrorStyle}>
 						<i className="fas fa-exclamation-triangle text-lg mx-2" />
